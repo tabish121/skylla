@@ -31,7 +31,7 @@
 
 struct handler : public proton::messaging_handler {
     void on_connection_open(proton::connection& conn) override {
-        std::cout << "Connection opened!" << std::endl;
+        std::cout << "Connected!" << std::endl;
         conn.close();
     }
 };
