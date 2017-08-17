@@ -61,6 +61,35 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>skylla.Connect</mainClass>
+          <arguments>
+            <argument>upto.nogood.industries</argument>
+          </arguments>
+          <systemProperties>
+            <property>
+              <key>java.security.auth.login.config</key>
+              <value>src/main/resources/login.config</value>
+            </property>
+            <property>
+              <key>sun.security.krb5.debug</key>
+              <value>true</value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
